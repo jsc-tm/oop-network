@@ -76,6 +76,7 @@ public class NewsFeed
         nf.addMessagePost(mp);
         nf.addMessagePost(new MessagePost("betty", "wanneer komen er video's?"));
         nf.addPhotoPost(new PhotoPost("betty", "vakantie.jpg", "Op vakantie!"));
+        PhotoPost pp = new PhotoPost("betty", "ardennen.jpg", "een dagje erop uit");
         nf.show();
     }
 }
