@@ -15,36 +15,24 @@ import java.util.ArrayList;
  */
 public class NewsFeed
 {
-    private ArrayList<MessagePost> messages;
-    private ArrayList<PhotoPost> photos;
-    
+    private ArrayList<Post> posts;
+
     /**
      * Construct an empty news feed.
      */
     public NewsFeed()
     {
-        messages = new ArrayList<MessagePost>();
-        photos = new ArrayList<PhotoPost>();
+        posts = new ArrayList<Post>();
     }
 
     /**
-     * Add a text post to the news feed.
+     * Add a post to the news feed.
      * 
-     * @param text  The text post to be added.
+     * @param post  The post to be added.
      */
-    public void addMessagePost(MessagePost message)
+    public void addPost(Post post)
     {
-        messages.add(message);
-    }
-
-    /**
-     * Add a photo post to the news feed.
-     * 
-     * @param photo  The photo post to be added.
-     */
-    public void addPhotoPost(PhotoPost photo)
-    {
-        photos.add(photo);
+        posts.add(post);
     }
 
     /**
@@ -54,15 +42,9 @@ public class NewsFeed
      */
     public void show()
     {
-        // display all text posts
-        for(MessagePost message : messages) {
-            message.display();
-            System.out.println();   // empty line between posts
-        }
-
-        // display all photos
-        for(PhotoPost photo : photos) {
-            photo.display();
+        // display all posts
+        for(Post post : posts) {
+            post.display();
             System.out.println();   // empty line between posts
         }
     }
@@ -73,9 +55,9 @@ public class NewsFeed
         mp.addComment("toch niet helemaal akkoord...");
         mp.like();
         mp.like();
-        nf.addMessagePost(mp);
-        nf.addMessagePost(new MessagePost("betty", "wanneer komen er video's?"));
-        nf.addPhotoPost(new PhotoPost("betty", "vakantie.jpg", "Op vakantie!"));
+        nf.addPost(mp);
+        nf.addPost(new MessagePost("betty", "wanneer komen er video's?"));
+        nf.addPost(new PhotoPost("betty", "vakantie.jpg", "Op vakantie!"));
         PhotoPost pp = new PhotoPost("betty", "ardennen.jpg", "een dagje erop uit");
         nf.show();
     }
