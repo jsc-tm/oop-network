@@ -55,16 +55,16 @@ public class NewsFeed
     public void show()
     {
         // display all text posts
-        for(MessagePost message : messages) {
+        messages.forEach(message -> {
             message.display();
             System.out.println();   // empty line between posts
-        }
+        });
 
         // display all photos
-        for(PhotoPost photo : photos) {
+        photos.forEach(photo -> {
             photo.display();
             System.out.println();   // empty line between posts
-        }
+        });
     }
     
     public static void main(String[] args) {
