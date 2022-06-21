@@ -43,10 +43,10 @@ public class NewsFeed
     public void show()
     {
         // display all posts
-        for(Post post : posts) {
+        posts.forEach(post -> {
             post.display();
             System.out.println();   // empty line between posts
-        }
+        });
     }
     
     public static void main(String[] args) {
