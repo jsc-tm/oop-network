@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class NewsFeed
 {
     private ArrayList<Post> posts;
+    private ArrayList<Publicity> publicityMessages;
 
     /**
      * Construct an empty news feed.
@@ -23,6 +24,7 @@ public class NewsFeed
     public NewsFeed()
     {
         posts = new ArrayList<Post>();
+        publicityMessages = new ArrayList<Publicity>();
     }
 
     /**
@@ -36,6 +38,13 @@ public class NewsFeed
     }
 
     /**
+     * Add publicity to the feed
+     *
+     * @param publicity The publicity to be added
+     */
+    public void addPublicity(Publicity publicity) { publicityMessages.add(publicity); }
+
+    /**
      * Show the news feed. Currently: print the news feed details
      * to the terminal. (To do: replace this later with display
      * in web browser.)
@@ -47,6 +56,12 @@ public class NewsFeed
             post.display();
             System.out.println();   // empty line between posts
         });
+
+        // display all publicity
+        publicityMessages.forEach(publicity -> {
+            publicity.display();
+            System.out.println();
+        });
     }
     
     public static void main(String[] args) {
@@ -56,8 +71,10 @@ public class NewsFeed
         mp.like();
         mp.like();
         nf.addPost(mp);
+        nf.addPublicity(new Publicity("MARS", "Altijd lekker!"));
         nf.addPost(new MessagePost("betty", "wanneer komen er video's?"));
         nf.addPost(new PhotoPost("betty", "vakantie.jpg", "Op vakantie!"));
+        nf.addPublicity(new Publicity("DASH", "Wast witter dan wit!"));
         PhotoPost pp = new PhotoPost("betty", "ardennen.jpg", "een dagje erop uit");
         nf.show();
     }
