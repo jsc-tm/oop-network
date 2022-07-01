@@ -17,7 +17,8 @@ public class NewsFeed
 {
     private ArrayList<MessagePost> messages;
     private ArrayList<PhotoPost> photos;
-    
+    private ArrayList<Publicity> publicityMessages;
+
     /**
      * Construct an empty news feed.
      */
@@ -25,12 +26,13 @@ public class NewsFeed
     {
         messages = new ArrayList<MessagePost>();
         photos = new ArrayList<PhotoPost>();
+        publicityMessages = new ArrayList<Publicity>();
     }
 
     /**
      * Add a text post to the news feed.
      * 
-     * @param text  The text post to be added.
+     * @param message  The message post to be added.
      */
     public void addMessagePost(MessagePost message)
     {
@@ -46,6 +48,13 @@ public class NewsFeed
     {
         photos.add(photo);
     }
+
+    /**
+     * Add publicity to the feed
+     *
+     * @param publicity The publicity to be added
+     */
+    public void addPublicity(Publicity publicity) { publicityMessages.add(publicity); }
 
     /**
      * Show the news feed. Currently: print the news feed details
@@ -65,6 +74,12 @@ public class NewsFeed
             photo.display();
             System.out.println();   // empty line between posts
         });
+
+        // display all publicity
+        publicityMessages.forEach(publicity -> {
+            publicity.display();
+            System.out.println();
+        });
     }
     
     public static void main(String[] args) {
@@ -74,8 +89,10 @@ public class NewsFeed
         mp.like();
         mp.like();
         nf.addMessagePost(mp);
+        nf.addPublicity(new Publicity("MARS", "Altijd lekker!"));
         nf.addMessagePost(new MessagePost("betty", "wanneer komen er video's?"));
         nf.addPhotoPost(new PhotoPost("betty", "vakantie.jpg", "Op vakantie!"));
+        nf.addPublicity(new Publicity("DASH", "Wast witter dan wit!"));
         PhotoPost pp = new PhotoPost("betty", "ardennen.jpg", "een dagje erop uit");
         nf.show();
     }
