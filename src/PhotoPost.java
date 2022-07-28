@@ -93,33 +93,25 @@ public class PhotoPost
     }
 
     /**
-     * Display the details of this post.
-     * 
-     * (Currently: Print to the text terminal. This is simulating display 
-     * in a web browser for now.)
+     * Get display with all details of this post.
      */
-    public void display()
-    {
-        System.out.println(username);
-        System.out.println("  [" + filename + "]");
-        System.out.println("  " + caption);
-        System.out.print(timeString(timestamp));
-        
-        if(likes > 0) {
-            System.out.println("  -  " + likes + " people like this.");
+    public String getDisplay() {
+        String display = username;
+        display += Env.NEWLINE + "  [" + filename + "]" + Env.NEWLINE + "  " + caption + Env.NEWLINE + timeString(timestamp);
+
+        if (likes > 0) {
+            display += "  -  " + likes + " people like this.";
         }
-        else {
-            System.out.println();
-        }
-        
+
+        display += Env.NEWLINE;
         if(comments.isEmpty()) {
-            System.out.println("   No comments.");
+            display += "   No comments.";
+        } else {
+            display += "   " + comments.size() + " comment(s). Click here to view.";
         }
-        else {
-            System.out.println("   " + comments.size() + " comment(s). Click here to view.");
-        }
+        return display;
     }
-    
+
     /**
      * Create a string describing a time point in the past in terms 
      * relative to current time, such as "30 seconds ago" or "7 minutes ago".

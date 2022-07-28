@@ -63,23 +63,17 @@ public class NewsFeed
      */
     public void show()
     {
-        // display all text posts
-        messages.forEach(message -> {
-            message.display();
-            System.out.println();   // empty line between posts
-        });
+        // display all messages
+        messages.stream().map(message -> message.getDisplay())
+                .forEach(s -> System.out.println(s + Env.NEWLINE));
 
         // display all photos
-        photos.forEach(photo -> {
-            photo.display();
-            System.out.println();   // empty line between posts
-        });
+        photos.stream().map(photo -> photo.getDisplay())
+                .forEach(s -> System.out.println(s + Env.NEWLINE));
 
         // display all publicity
-        publicityMessages.forEach(publicity -> {
-            publicity.display();
-            System.out.println();
-        });
+        publicityMessages.stream().map(publicity -> publicity.getDisplay())
+                .forEach(s -> System.out.println(s + Env.NEWLINE));
     }
     
     public static void main(String[] args) {
