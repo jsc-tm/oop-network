@@ -51,7 +51,7 @@ public class NewsFeed
      */
     public void show()
     {
-        // display all messages
+        // display all posts
         posts.stream().map(post -> post.getDisplay())
                 .forEach(s -> System.out.println(s + Env.NEWLINE));
 
