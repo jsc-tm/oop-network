@@ -11,7 +11,10 @@ public class Publicity {
         return brand;
     }
 
-    public void display() {
-        System.out.println(brand + " - " + message);
+    /**
+     * Get display with all details of this publicity.
+     */
+    public String getDisplay() {
+        return brand + " - " + message;
     }
 }

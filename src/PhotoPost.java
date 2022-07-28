@@ -47,7 +47,7 @@ public class PhotoPost extends Post
         return caption;
     }
 
-    public void printShortDetails() {
-        System.out.println("Photo post from " + getUsername());
+    public String getShortDetails() {
+        return "Photo post from " + getUsername();
     }
 }

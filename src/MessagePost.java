@@ -34,7 +34,7 @@ public class MessagePost extends Post
         return message;
     }
 
-    public void printShortDetails() {
-        System.out.println("Message post from " + getUsername());
+    public String getShortDetails() {
+        return "Message post from " + getUsername();
     }
 }

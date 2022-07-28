@@ -51,17 +51,13 @@ public class NewsFeed
      */
     public void show()
     {
-        // display all posts
-        posts.forEach(post -> {
-            post.display();
-            System.out.println();   // empty line between posts
-        });
+        // display all messages
+        posts.stream().map(post -> post.getDisplay())
+                .forEach(s -> System.out.println(s + Env.NEWLINE));
 
         // display all publicity
-        publicityMessages.forEach(publicity -> {
-            publicity.display();
-            System.out.println();
-        });
+        publicityMessages.stream().map(publicity -> publicity.getDisplay())
+                .forEach(s -> System.out.println(s + Env.NEWLINE));
     }
     
     public static void main(String[] args) {
