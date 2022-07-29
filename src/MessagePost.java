@@ -39,6 +39,8 @@ public class MessagePost extends Post
     }
 
     public String getDisplay() {
-        return Env.NEWLINE + message + Env.NEWLINE;
+        String display = super.getDisplay();
+        display += Env.NEWLINE + message + Env.NEWLINE;
+        return display;
     }
 }
