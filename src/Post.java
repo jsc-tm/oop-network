@@ -65,7 +65,7 @@ public class Post {
      */
     public String getDisplay() {
         String display = username;
-        display += this;
+        display += getContent();
         display += Env.NEWLINE + timeString(timestamp);
 
         if (likes > 0) {
@@ -79,6 +79,10 @@ public class Post {
             display += "   " + comments.size() + " comment(s). Click here to view.";
         }
         return display;
+    }
+
+    protected String getContent() {
+        return "";
     }
 
     /**

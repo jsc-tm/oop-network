@@ -51,8 +51,11 @@ public class PhotoPost extends Post
         return "Photo post from " + getUsername();
     }
 
+    protected String getContent() {
+        return Env.NEWLINE + "  [" + filename + "]" + Env.NEWLINE + "  " + caption;
+    }
     @Override
     public String toString() {
-        return Env.NEWLINE + "  [" + filename + "]" + Env.NEWLINE + "  " + caption;
+        return getShortDetails();
     }
 }

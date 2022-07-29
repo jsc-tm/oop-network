@@ -38,8 +38,11 @@ public class MessagePost extends Post
         return "Message post from " + getUsername();
     }
 
+    protected String getContent() {
+        return Env.NEWLINE + message;
+    }
     @Override
     public String toString() {
-        return Env.NEWLINE + message;
+        return getShortDetails();
     }
 }
