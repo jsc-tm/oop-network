@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Post {
+abstract public class Post {
     private String username;  // username of the post's author
     private long timestamp;
     private int likes;
@@ -81,9 +81,7 @@ public class Post {
         return display;
     }
 
-    protected String getContent() {
-        return "";
-    }
+    abstract protected String getContent();
 
     /**
      * Create a string describing a time point in the past in terms
