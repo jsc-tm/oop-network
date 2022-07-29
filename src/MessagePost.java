@@ -37,4 +37,8 @@ public class MessagePost extends Post
     public String getShortDetails() {
         return "Message post from " + getUsername();
     }
+
+    public String getDisplay() {
+        return Env.NEWLINE + message + Env.NEWLINE;
+    }
 }

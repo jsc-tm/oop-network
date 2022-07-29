@@ -50,4 +50,8 @@ public class PhotoPost extends Post
     public String getShortDetails() {
         return "Photo post from " + getUsername();
     }
+
+    public String getDisplay() {
+        return Env.NEWLINE + "  [" + filename + "]" + Env.NEWLINE + "  " + caption + Env.NEWLINE;
+    }
 }
