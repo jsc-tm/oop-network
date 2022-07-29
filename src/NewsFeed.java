@@ -73,5 +73,8 @@ public class NewsFeed
         nf.addPublicity(new Publicity("DASH", "Wast witter dan wit!"));
         PhotoPost pp = new PhotoPost("betty", "ardennen.jpg", "een dagje erop uit");
         nf.show();
+
+        IHasDisplay ih = new MessagePost("wim", "knap werk!");
+        System.out.println(ih);
     }
 }

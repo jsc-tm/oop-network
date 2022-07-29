@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-abstract public class Post {
+abstract public class Post implements IHasDisplay {
     private String username;  // username of the post's author
     private long timestamp;
     private int likes;

@@ -1,4 +1,4 @@
-public class Publicity {
+public class Publicity implements IHasDisplay {
     private String brand;
     private String message;
 
