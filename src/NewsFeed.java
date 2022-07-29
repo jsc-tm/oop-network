@@ -15,34 +15,25 @@ import java.util.ArrayList;
  */
 public class NewsFeed
 {
-    private ArrayList<Post> posts;
-    private ArrayList<Publicity> publicityMessages;
+    private ArrayList<IHasDisplay> displays;
 
     /**
      * Construct an empty news feed.
      */
     public NewsFeed()
     {
-        posts = new ArrayList<Post>();
-        publicityMessages = new ArrayList<Publicity>();
+        displays = new ArrayList<IHasDisplay>();
     }
 
     /**
      * Add a post to the news feed.
      * 
-     * @param post  The post to be added.
+     * @param display  The display to be added.
      */
-    public void addPost(Post post)
+    public void addDisplay(IHasDisplay display)
     {
-        posts.add(post);
+        displays.add(display);
     }
-
-    /**
-     * Add publicity to the feed
-     *
-     * @param publicity The publicity to be added
-     */
-    public void addPublicity(Publicity publicity) { publicityMessages.add(publicity); }
 
     /**
      * Show the news feed. Currently: print the news feed details
@@ -52,11 +43,7 @@ public class NewsFeed
     public void show()
     {
         // display all posts
-        posts.stream().map(post -> post.getDisplay())
-                .forEach(s -> System.out.println(s + Env.NEWLINE));
-
-        // display all publicity
-        publicityMessages.stream().map(publicity -> publicity.getDisplay())
+        displays.stream().map(display -> display.getDisplay())
                 .forEach(s -> System.out.println(s + Env.NEWLINE));
     }
     
@@ -66,11 +53,11 @@ public class NewsFeed
         mp.addComment("toch niet helemaal akkoord...");
         mp.like();
         mp.like();
-        nf.addPost(mp);
-        nf.addPublicity(new Publicity("MARS", "Altijd lekker!"));
-        nf.addPost(new MessagePost("betty", "wanneer komen er video's?"));
-        nf.addPost(new PhotoPost("betty", "vakantie.jpg", "Op vakantie!"));
-        nf.addPublicity(new Publicity("DASH", "Wast witter dan wit!"));
+        nf.addDisplay(mp);
+        nf.addDisplay(new Publicity("MARS", "Altijd lekker!"));
+        nf.addDisplay(new MessagePost("betty", "wanneer komen er video's?"));
+        nf.addDisplay(new PhotoPost("betty", "vakantie.jpg", "Op vakantie!"));
+        nf.addDisplay(new Publicity("DASH", "Wast witter dan wit!"));
         PhotoPost pp = new PhotoPost("betty", "ardennen.jpg", "een dagje erop uit");
         nf.show();
 
