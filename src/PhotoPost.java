@@ -51,9 +51,8 @@ public class PhotoPost extends Post
         return "Photo post from " + getUsername();
     }
 
-    public String getDisplay() {
-        String display = super.getDisplay();
-        display += Env.NEWLINE + "  [" + filename + "]" + Env.NEWLINE + "  " + caption;
-        return display;
+    @Override
+    public String toString() {
+        return Env.NEWLINE + "  [" + filename + "]" + Env.NEWLINE + "  " + caption;
     }
 }

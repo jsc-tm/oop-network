@@ -38,9 +38,8 @@ public class MessagePost extends Post
         return "Message post from " + getUsername();
     }
 
-    public String getDisplay() {
-        String display = super.getDisplay();
-        display += Env.NEWLINE + message;
-        return display;
+    @Override
+    public String toString() {
+        return Env.NEWLINE + message;
     }
 }

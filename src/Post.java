@@ -65,8 +65,7 @@ public class Post {
      */
     public String getDisplay() {
         String display = username;
-        //display += Env.NEWLINE + message;
-        //display += Env.NEWLINE + "  [" + filename + "]" + Env.NEWLINE + "  " + caption;
+        display += this;
         display += Env.NEWLINE + timeString(timestamp);
 
         if (likes > 0) {
