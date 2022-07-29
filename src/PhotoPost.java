@@ -53,7 +53,7 @@ public class PhotoPost extends Post
 
     public String getDisplay() {
         String display = super.getDisplay();
-        display += Env.NEWLINE + "  [" + filename + "]" + Env.NEWLINE + "  " + caption + Env.NEWLINE;
+        display += Env.NEWLINE + "  [" + filename + "]" + Env.NEWLINE + "  " + caption;
         return display;
     }
 }

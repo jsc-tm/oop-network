@@ -40,7 +40,7 @@ public class MessagePost extends Post
 
     public String getDisplay() {
         String display = super.getDisplay();
-        display += Env.NEWLINE + message + Env.NEWLINE;
+        display += Env.NEWLINE + message;
         return display;
     }
 }
