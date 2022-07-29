@@ -39,6 +39,6 @@ public class MessagePost extends Post
     }
 
     public String getDisplay() {
-        return Env.NEWLINE + message + Env.NEWLINE;
+        return Env.NEWLINE + message;
     }
 }

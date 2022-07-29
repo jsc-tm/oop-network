@@ -52,6 +52,6 @@ public class PhotoPost extends Post
     }
 
     public String getDisplay() {
-        return Env.NEWLINE + "  [" + filename + "]" + Env.NEWLINE + "  " + caption + Env.NEWLINE;
+        return Env.NEWLINE + "  [" + filename + "]" + Env.NEWLINE + "  " + caption;
     }
 }
