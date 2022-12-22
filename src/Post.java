@@ -3,8 +3,6 @@ import java.util.ArrayList;
 abstract public class Post implements IHasDisplay, IHasAuthor {
     private Author author;  // username of the post's author
     private long timestamp;
-    private int likes;
-    private ArrayList<String> comments;
 
     /**
      * Constructor for objects of class Post.
@@ -14,8 +12,6 @@ abstract public class Post implements IHasDisplay, IHasAuthor {
     public Post(Author author) {
         this.author = author;
         timestamp = System.currentTimeMillis();
-        likes = 0;
-        comments = new ArrayList<String>();
     }
 
     public Author getAuthor() {
@@ -39,34 +35,6 @@ abstract public class Post implements IHasDisplay, IHasAuthor {
     }
 
     /**
-     * Record one more 'Like' indication from a user.
-     */
-    public void like()
-    {
-        likes++;
-    }
-
-    /**
-     * Record that a user has withdrawn his/her 'Like' vote.
-     */
-    public void unlike()
-    {
-        if (likes > 0) {
-            likes--;
-        }
-    }
-
-    /**
-     * Add a comment to this post.
-     *
-     * @param text  The new comment to add.
-     */
-    public void addComment(String text)
-    {
-        comments.add(text);
-    }
-
-    /**
      * Return the time of creation of this post.
      *
      * @return The post's creation time, as a system time value.
@@ -84,16 +52,6 @@ abstract public class Post implements IHasDisplay, IHasAuthor {
         display += getContent();
         display += Env.NEWLINE + timeString(timestamp);
 
-        if (likes > 0) {
-            display += "  -  " + likes + " people like this.";
-        }
-
-        display += Env.NEWLINE;
-        if(comments.isEmpty()) {
-            display += "   No comments.";
-        } else {
-            display += "   " + comments.size() + " comment(s). Click here to view.";
-        }
         return display;
     }
 

@@ -6,7 +6,7 @@
  * @author Michael Kölling and David J. Barnes
  * @version 0.1
  */
-public class PhotoPost extends Post
+public class PhotoPost extends CommentedPost
 {
     private String filename;  // the name of the image file
     private String caption;   // a one line image caption
