@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-abstract public class Post implements IHasDisplay {
+abstract public class Post implements IHasDisplay, IHasAuthor {
     private Author author;  // username of the post's author
     private long timestamp;
     private int likes;
@@ -22,6 +22,16 @@ abstract public class Post implements IHasDisplay {
         return author;
     }
 
+
+    @Override
+    public String getName() {
+        return author.getName();
+    }
+
+    @Override
+    public void block() {
+        author.setCanPublish(false);
+    }
 
     @Override
     public boolean isPublished() {

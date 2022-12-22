@@ -63,6 +63,7 @@ public class NewsFeed
         PhotoPost pp = new PhotoPost(betty, "ardennen.jpg", "een dagje erop uit");
 
         MessagePost spam = new MessagePost(wim, "bowwowow");
+        spam.block();
         wim.setCanPublish(false);
 
         nf.show();
