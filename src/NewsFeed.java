@@ -66,6 +66,12 @@ public class NewsFeed
         spam.block();
         wim.setCanPublish(false);
 
+        Author tom = new Author("tom");
+        EventPost ep1 = new EventPost(tom, Event.BECOME_FRIEND);
+        EventPost ep2 = new EventPost(betty, Event.CHANGE_PROFILEPICTURE);
+        nf.addDisplay(ep1);
+        nf.addDisplay(ep2);
+
         nf.show();
     }
 }
