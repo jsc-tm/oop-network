@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * This class stores information about a post in a social network. 
  * The main part of the post consists of a (possibly multi-line)
@@ -18,7 +16,7 @@ public class MessagePost extends Post
      * @param author    The username of the author of this post.
      * @param text      The text of this post.
      */
-    public MessagePost(String author, String text)
+    public MessagePost(Author author, String text)
     {
         super(author);
         message = text;
@@ -35,7 +33,7 @@ public class MessagePost extends Post
     }
 
     public String getShortDetails() {
-        return "Message post from " + getUsername();
+        return "Message post from " + getAuthor().getName();
     }
 
     protected String getContent() {

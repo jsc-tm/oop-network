@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 abstract public class Post implements IHasDisplay {
-    private String username;  // username of the post's author
+    private Author author;  // username of the post's author
     private long timestamp;
     private int likes;
     private ArrayList<String> comments;
@@ -11,15 +11,15 @@ abstract public class Post implements IHasDisplay {
      *
      * @param author    The username of the author of this post.
      */
-    public Post(String author) {
-        username = author;
+    public Post(Author author) {
+        this.author = author;
         timestamp = System.currentTimeMillis();
         likes = 0;
         comments = new ArrayList<String>();
     }
 
-    public String getUsername() {
-        return username;
+    public Author getAuthor() {
+        return author;
     }
 
     /**
@@ -64,7 +64,7 @@ abstract public class Post implements IHasDisplay {
      * Get display with all details of this post.
      */
     public String getDisplay() {
-        String display = username;
+        String display = author.getName();
         display += getContent();
         display += Env.NEWLINE + timeString(timestamp);
 

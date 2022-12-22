@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * This class stores information about a post in a social network. 
  * The main part of the post consists of a photo and a caption. 
@@ -20,7 +18,7 @@ public class PhotoPost extends Post
      * @param filename  The filename of the image in this post.
      * @param caption   A caption for the image.
      */
-    public PhotoPost(String author, String filename, String caption)
+    public PhotoPost(Author author, String filename, String caption)
     {
         super(author);
         this.filename = filename;
@@ -48,7 +46,7 @@ public class PhotoPost extends Post
     }
 
     public String getShortDetails() {
-        return "Photo post from " + getUsername();
+        return "Photo post from " + getAuthor().getName();
     }
 
     protected String getContent() {

@@ -49,19 +49,21 @@ public class NewsFeed
     
     public static void main(String[] args) {
         NewsFeed nf = new NewsFeed();
-        MessagePost mp = new MessagePost("wim", "knap werk!");
+        Author wim = new Author("wim");
+        MessagePost mp = new MessagePost(wim, "knap werk!");
         mp.addComment("toch niet helemaal akkoord...");
         mp.like();
         mp.like();
         nf.addDisplay(mp);
         nf.addDisplay(new Publicity("MARS", "Altijd lekker!"));
-        nf.addDisplay(new MessagePost("betty", "wanneer komen er video's?"));
-        nf.addDisplay(new PhotoPost("betty", "vakantie.jpg", "Op vakantie!"));
+        Author betty = new Author("betty");
+        nf.addDisplay(new MessagePost(betty, "wanneer komen er video's?"));
+        nf.addDisplay(new PhotoPost(betty, "vakantie.jpg", "Op vakantie!"));
         nf.addDisplay(new Publicity("DASH", "Wast witter dan wit!"));
-        PhotoPost pp = new PhotoPost("betty", "ardennen.jpg", "een dagje erop uit");
+        PhotoPost pp = new PhotoPost(betty, "ardennen.jpg", "een dagje erop uit");
         nf.show();
 
-        IHasDisplay ih = new MessagePost("wim", "knap werk!");
+        IHasDisplay ih = new MessagePost(wim, "knap werk!");
         System.out.println(ih);
     }
 }
