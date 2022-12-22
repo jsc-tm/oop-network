@@ -1,6 +1,6 @@
 public class Author {
     private String name;
-    private boolean canPublish;
+    private boolean canPublish = true;
 
     public Author(String name) {
         this.name = name;

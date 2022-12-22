@@ -43,7 +43,7 @@ public class NewsFeed
     public void show()
     {
         // display all posts
-        displays.stream().map(display -> display.getDisplay())
+        displays.stream().filter(display -> display.isPublished()).map(display -> display.getDisplay())
                 .forEach(s -> System.out.println(s + Env.NEWLINE));
     }
     
@@ -61,9 +61,10 @@ public class NewsFeed
         nf.addDisplay(new PhotoPost(betty, "vakantie.jpg", "Op vakantie!"));
         nf.addDisplay(new Publicity("DASH", "Wast witter dan wit!"));
         PhotoPost pp = new PhotoPost(betty, "ardennen.jpg", "een dagje erop uit");
-        nf.show();
 
-        IHasDisplay ih = new MessagePost(wim, "knap werk!");
-        System.out.println(ih);
+        MessagePost spam = new MessagePost(wim, "bowwowow");
+        wim.setCanPublish(false);
+
+        nf.show();
     }
 }

@@ -7,6 +7,13 @@ public class Publicity implements IHasDisplay {
         this.message = message;
     }
 
+
+    @Override
+    public boolean isPublished() {
+        return true;
+    }
+
+
     public String getBrand() {
         return brand;
     }

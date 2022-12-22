@@ -22,6 +22,12 @@ abstract public class Post implements IHasDisplay {
         return author;
     }
 
+
+    @Override
+    public boolean isPublished() {
+        return author.canPublish();
+    }
+
     /**
      * Record one more 'Like' indication from a user.
      */
