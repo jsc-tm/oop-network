@@ -1,3 +1,3 @@
-public interface IHasDisplay {
+public interface IHasDisplay extends IPublished {
     abstract public String getDisplay();
 }
